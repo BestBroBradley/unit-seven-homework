@@ -37,6 +37,7 @@ makeMyHTML: function makeMyHTML (data, color) {
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
       <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" rel="stylesheet">
       <title>Document</title>
+      <script src="https://kit.fontawesome.com/8199e8ad2b.js" crossorigin="anonymous"></script>
       <style>
           @page {
             margin: 0;
@@ -188,10 +189,10 @@ makeMyHTML: function makeMyHTML (data, color) {
                 <h1>Hi!</h1>
                 <h2>My name is ${data.data.name}!</h2>
                 <div class="links-nav">
-                    <h5>Currently @ ${data.data.company}</h5>
-                    <h6 class="nav-link">${data.data.location}</h6>
-                    <a href="${data.data.html_url}"><h6 class="nav-link">GitHub</h6></a>
-                    <a href="${data.data.blog}"><h6 class="nav-link">Blog</h6></a>
+                    <h5><i class="far fa-building"></i> Currently @ ${data.data.company}</h5>
+                    <h6 class="nav-link"><i class="fas fa-compass"></i> ${data.data.location}</h6>
+                    <a href="${data.data.html_url}"><h6 class="nav-link"><i class="fab fa-github"></i> GitHub</h6></a>
+                    <a href="${data.data.blog}"><h6 class="nav-link"><i class="fas fa-rss"></i> Blog</h6></a>
                 </div>
             </div>
             <div class="wrapper">
