@@ -2,6 +2,7 @@ const fs = require("fs")
 const axios = require("axios")
 const inquirer = require("inquirer")
 const util = require("util")
+const generateHTML = require("./generateHTML")
 
 const writeFileAsync = util.promisify(fs.writeFile)
 
@@ -29,8 +30,11 @@ function promptUser() {
             .get(queryUrl)
             .then (function (response) {
                 console.log(response)
-            })
+                const html = generateHTML.makeMyHTML(response, color)
+                console.log(html)
+            }) 
         })
-    } 
+    }
     
     promptUser()
+    

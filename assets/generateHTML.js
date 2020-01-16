@@ -1,4 +1,5 @@
-const colors = {
+var generateHTML = {
+  colors: {
   green: {
     wrapperBackground: "#E6E1C3",
     headerBackground: "#C1C72C",
@@ -23,9 +24,10 @@ const colors = {
     headerColor: "white",
     photoBorderColor: "white"
   }
-};
+},
 
-function generateHTML(index) {
+makeMyHTML: function makeMyHTML (data, color) {
+  color = color.toLowerCase();
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -52,7 +54,7 @@ function generateHTML(index) {
          height: 100%;
          }
          .wrapper {
-         background-color: ${colors.green.wrapperBackground};
+         background-color: ${this.colors[color.toLowerCase()].wrapperBackground};
          padding-top: 100px;
          }
          body {
@@ -95,8 +97,8 @@ function generateHTML(index) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${colors.green.headerBackground};
-         color: ${colors.green.headerColor};
+         background-color: ${this.colors.color.headerBackground};
+         color: ${this.colors.color.headerColor};
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -107,7 +109,7 @@ function generateHTML(index) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${colors.green.photoBorderColor};
+         border: 6px solid ${this.colors.color.photoBorderColor};
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -150,8 +152,8 @@ function generateHTML(index) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${colors.green.headerBackground};
-           color: ${colors.green.headerColor};
+           background-color: ${this.colors.color.headerBackground};
+           color: ${this.colors.color.headerColor};
            margin: 20px;
          }
          
@@ -220,6 +222,6 @@ function generateHTML(index) {
 </body>
 </html`
 }
+}
 
-module.exports = generateHTML()
-module.exports = colors
+module.exports = generateHTML
