@@ -188,7 +188,7 @@ makeMyHTML: function makeMyHTML (data, color) {
                 <h1>Hi!</h1>
                 <h2>My name is ${data.data.name}!</h2>
                 <div class="links-nav">
-                    <h5>Current blah blah</h5>
+                    <h5>Currently @ ${data.data.company}</h5>
                     <h6 class="nav-link">${data.data.location}</h6>
                     <a href="${data.data.html_url}"><h6 class="nav-link">GitHub</h6></a>
                     <a href="${data.data.blog}"><h6 class="nav-link">Blog</h6></a>
