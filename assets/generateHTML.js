@@ -63,7 +63,7 @@ function generateHTML(data) {
          main {
          background-color: #E9EDEE;
          height: auto;
-         padding-top: 30px;
+         padding-top: 80px;
          }
          h1, h2, h3, h4, h5, h6 {
          font-family: 'BioRhyme', serif;
@@ -77,6 +77,7 @@ function generateHTML(data) {
          }
          h3 {
          font-size: 2em;
+         text-align: center;
          }
          h4 {
          font-size: 1.5em;
@@ -133,7 +134,7 @@ function generateHTML(data) {
          margin-top: 10px;
          }
          .container {
-         padding: 50px;
+         padding: 7px 50px 50px 50px;
          padding-left: 100px;
          padding-right: 100px;
          }
@@ -170,5 +171,52 @@ function generateHTML(data) {
             zoom: .75; 
           } 
          }
-      </style>`
-        }
+         footer {
+          background-color: palevioletred;
+          height: auto;
+          padding-top: 200px;
+         }
+      </style>
+      </head>
+      <body>
+    <main>
+        <div>
+            <div class="photo-header">
+                <img src="https://picsum.photos/200/300">
+                <h1>Hi!</h1>
+                <h2>My name is Allison!</h2>
+                <div class="links-nav">
+                    <h5>Current blah blah</h5>
+                    <h6 class="nav-link">Richmond VA</h6>
+                    <h6 class="nav-link">GitHub</h6>
+                    <h6 class="nav-link">Blog</h6>
+                </div>
+            </div>
+            <div class="wrapper">
+                <h3>I build things and teach people how to code</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="card">Public Repositories</h3>
+                        </div>
+                        <div class="col">
+                            <h3 class="card">Followers</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="card">GitHub Stars</h3>
+                        </div>
+                        <div class="col">
+                            <h3 class="card">Following</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html`
+}
