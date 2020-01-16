@@ -174,7 +174,7 @@ makeMyHTML: function makeMyHTML (data, color) {
           } 
          }
          footer {
-          background-color: palevioletred;
+          background-color: #E9EDEE;
           height: auto;
           padding-top: 200px;
          }

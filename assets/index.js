@@ -31,7 +31,9 @@ function promptUser() {
             .then (function (response) {
                 console.log(response)
                 const html = generateHTML.makeMyHTML(response, color)
-                console.log(html)
+                writeFileAsync(`${githubUser}.html`, html).then(function() {
+                    console.log(`"Successfully wrote to ${githubUser}.html file"`);
+                  });
             }) 
         })
     }
