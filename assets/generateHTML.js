@@ -54,7 +54,7 @@ makeMyHTML: function makeMyHTML (data, color) {
          height: 100%;
          }
          .wrapper {
-         background-color: ${this.colors[color.toLowerCase()].wrapperBackground};
+         background-color: ${this.colors[color].wrapperBackground};
          padding-top: 100px;
          }
          body {
@@ -97,8 +97,8 @@ makeMyHTML: function makeMyHTML (data, color) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${this.colors.color.headerBackground};
-         color: ${this.colors.color.headerColor};
+         background-color: ${this.colors[color].headerBackground};
+         color: ${this.colors[color].headerColor};
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -109,7 +109,7 @@ makeMyHTML: function makeMyHTML (data, color) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${this.colors.color.photoBorderColor};
+         border: 6px solid ${this.colors[color].photoBorderColor};
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -152,8 +152,8 @@ makeMyHTML: function makeMyHTML (data, color) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${this.colors.color.headerBackground};
-           color: ${this.colors.color.headerColor};
+           background-color: ${this.colors[color].headerBackground};
+           color: ${this.colors[color].headerColor};
            margin: 20px;
          }
          
