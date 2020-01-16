@@ -25,7 +25,7 @@ const colors = {
   }
 };
 
-function generateHTML(data) {
+function generateHTML(index) {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -52,7 +52,7 @@ function generateHTML(data) {
          height: 100%;
          }
          .wrapper {
-         background-color: ${colors[data.color].wrapperBackground};
+         background-color: ${colors.green.wrapperBackground};
          padding-top: 100px;
          }
          body {
@@ -95,8 +95,8 @@ function generateHTML(data) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${colors[data.color].headerBackground};
-         color: ${colors[data.color].headerColor};
+         background-color: ${colors.green.headerBackground};
+         color: ${colors.green.headerColor};
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -107,7 +107,7 @@ function generateHTML(data) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${colors[data.color].photoBorderColor};
+         border: 6px solid ${colors.green.photoBorderColor};
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -150,8 +150,8 @@ function generateHTML(data) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${colors[data.color].headerBackground};
-           color: ${colors[data.color].headerColor};
+           background-color: ${colors.green.headerBackground};
+           color: ${colors.green.headerColor};
            margin: 20px;
          }
          
@@ -182,35 +182,35 @@ function generateHTML(data) {
     <main>
         <div>
             <div class="photo-header">
-                <img src="https://picsum.photos/200/300">
+                <img src=${data.data.avatar_url}>
                 <h1>Hi!</h1>
-                <h2>My name is Allison!</h2>
+                <h2>My name is ${data.data.name}!</h2>
                 <div class="links-nav">
                     <h5>Current blah blah</h5>
-                    <h6 class="nav-link">Richmond VA</h6>
-                    <h6 class="nav-link">GitHub</h6>
-                    <h6 class="nav-link">Blog</h6>
+                    <h6 class="nav-link">${data.data.location}</h6>
+                    <a href="${data.data.url}"><h6 class="nav-link">GitHub</h6></a>
+                    <a href="${data.data.blog}"><h6 class="nav-link">Blog</h6></a>
                 </div>
             </div>
             <div class="wrapper">
-                <h3>I build things and teach people how to code</h3>
+                <h3>${data.data.bio}</h3>
                 <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="card">Public Repositories</h3>
-                        </div>
-                        <div class="col">
-                            <h3 class="card">Followers</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="card">GitHub Stars</h3>
-                        </div>
-                        <div class="col">
-                            <h3 class="card">Following</h3>
-                        </div>
-                    </div>
+                <div class="row">
+                <div class="col">
+                    <h3 class="card">Public Repositories<br><span id="pubRepos">${data.data.public_repos}</span></h3>
+                </div>
+                <div class="col">
+                    <h3 class="card">Followers<br><span id="followers">${data.data.followers}</span></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h3 class="card">GitHub Stars<br><span id="ghStars">0</span></h3>
+                </div>
+                <div class="col">
+                    <h3 class="card">Following<br><span id="following">${data.data.following}</span></h3>
+                </div>
+            </div>
                 </div>
             </div>
         </div>
@@ -220,3 +220,6 @@ function generateHTML(data) {
 </body>
 </html`
 }
+
+module.exports = generateHTML()
+module.exports = colors
