@@ -8,7 +8,7 @@ This program is useful to anyone who would like to be able to generate a quick a
 
 # Functionality:
 
-![A gif of the program functionality]("assets/pdf-profile-maker.gif")
+![A gif of the program functionality](assets/pdf-profile-maker.gif)
 
 In the command line, the user will input their preferred color-scheme and their GitHub username.  The file will then make an API call to retreive a variety of information from the user's GitHub profile, including:
 
@@ -25,9 +25,9 @@ In the command line, the user will input their preferred color-scheme and their 
 
 The program will then insert that information along with the chosen color scheme into a dynamically-created framework of HTML and CSS.
 
-![Generated HTML page]("assets/HTML-page-1.png")
-![Generated HTML page]("assets/HTML-page-2.png")
-![Generated PDF image]("assets/pdf-screenshot.png")
+![Generated HTML page](assets/HTML-page-1.png)
+![Generated HTML page](assets/HTML-page-2.png)
+![Generated PDF image](assets/pdf-screenshot.png)
 
 # Third-party items used:
 
