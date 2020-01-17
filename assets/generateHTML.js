@@ -26,7 +26,7 @@ var generateHTML = {
   }
 },
 
-makeMyHTML: function makeMyHTML (data, color) {
+makeMyHTML: function makeMyHTML (data, color, stars) {
   color = color.toLowerCase();
   return `<!DOCTYPE html>
 <html lang="en">
@@ -208,7 +208,7 @@ makeMyHTML: function makeMyHTML (data, color) {
             </div>
             <div class="row">
                 <div class="col">
-                    <h3 class="card">GitHub Stars<br><span id="ghStars">0</span></h3>
+                    <h3 class="card">GitHub Stars<br><span id="ghStars">${stars}</span></h3>
                 </div>
                 <div class="col">
                     <h3 class="card">Following<br><span id="following">${data.data.following}</span></h3>

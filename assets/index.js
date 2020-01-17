@@ -8,6 +8,8 @@ const writeFileAsync = util.promisify(fs.writeFile)
 
 let color
 let githubUser
+let apiResponse
+let stars = 0;
 
 function promptUser() {
     inquirer.prompt([
@@ -22,21 +24,30 @@ function promptUser() {
             name: "githubUser",
             message: "What is your GitHub username?"
         }
-    ]).then (function(data) {
-        color = data.color;
-        githubUser = data.githubUser
+    ]).then (function(userData) {
+        color = userData.color;
+        githubUser = userData.githubUser
         const queryUrl = `https://api.github.com/users/${githubUser}`
+        const queryUrl2 = `https://api.github.com/users/${githubUser}/repos`
         axios
             .get(queryUrl)
             .then (function (response) {
-                console.log(response)
-                const html = generateHTML.makeMyHTML(response, color)
+                apiResponse = response 
+                console.log(apiResponse)
+            }) 
+        axios
+            .get(queryUrl2)
+            .then (function (repoData) {
+                for (const datum of repoData.data) {
+                    stars += datum.stargazers_count
+                }
+            }) .then (function () {
+                console.log(apiResponse) 
+                const html = generateHTML.makeMyHTML(apiResponse, color, stars)
                 writeFileAsync(`${githubUser}.html`, html).then(function() {
                     console.log(`"Successfully wrote to ${githubUser}.html file"`);
                   });
-            }) 
         })
-    }
-    
+    })
+}
     promptUser()
-    
