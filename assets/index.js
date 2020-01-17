@@ -40,8 +40,9 @@ function promptUser() {
             .then (function (repoData) {
                 for (const datum of repoData.data) {
                     stars += datum.stargazers_count
-                }
-            }) .then (function () {
+                } console.log(stars)
+            })
+        .then (function () {
                 console.log(apiResponse) 
                 const html = generateHTML.makeMyHTML(apiResponse, color, stars)
                 writeFileAsync(`${githubUser}.html`, html).then(function() {
